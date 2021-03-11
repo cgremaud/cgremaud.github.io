@@ -60,8 +60,15 @@ window.addEventListener("load", (event) => {
         } else if (fuelLevel.value < 10000) {
             event.preventDefault()
             faultyItems.style.visibility = "visible"
-            let fuelLevelElement = document.getElementById("fuelStatus")
-            fuelLevelElement.innerHTML = "Fuel level too low"
+            let fuelStatusElement = document.getElementById("fuelStatus")
+            fuelStatusElement.innerHTML = "Fuel level too low"
+        } else if (cargoMass.value > 10000){
+            faultyItems.style.visibility = "visible"
+            let cargoStatusElement = document.getElementById("cargoStatus");
+            cargoStatusElement.innerHTML = "Cargo mass too high";
+            event.preventDefault()
+            console.log("conditional triggered")
+            
         }
 
 
