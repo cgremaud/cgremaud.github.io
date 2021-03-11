@@ -57,12 +57,14 @@ window.addEventListener("load", (event) => {
         if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
             alert("All fields are required")
             event.preventDefault()
-        } else if (fuelLevel.value < 10000) {
+        } 
+        if (fuelLevel.value < 10000) {
             event.preventDefault()
             faultyItems.style.visibility = "visible"
             let fuelStatusElement = document.getElementById("fuelStatus")
             fuelStatusElement.innerHTML = "Fuel level too low"
-        } else if (cargoMass.value > 10000){
+        } 
+        if (cargoMass.value > 10000){
             faultyItems.style.visibility = "visible"
             let cargoStatusElement = document.getElementById("cargoStatus");
             cargoStatusElement.innerHTML = "Cargo mass too high";
