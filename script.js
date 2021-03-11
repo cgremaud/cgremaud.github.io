@@ -52,14 +52,18 @@ window.addEventListener("load", (event) => {
         let copilotName = document.querySelector("input[name=copilotName]");
         let fuelLevel = document.querySelector("input[name=fuelLevel]")
         let cargoMass = document.querySelector("input[name=cargoMass]")
+        let faultyItems = document.getElementById("faultyItems")
 
         if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
             alert("All fields are required")
             event.preventDefault()
-        } else {
-
+        } else if (fuelLevel.value < 10000) {
+            event.preventDefault()
+            faultyItems.style.visibility = "visible"
+            let fuelLevelElement = document.getElementById("fuelStatus")
+            fuelLevelElement.innerHTML = "Fuel level too low"
         }
-        
+
 
     })
-})
+}) 
