@@ -11,3 +11,17 @@
 </ol>
 <img src="${}">
 */
+
+window.addEventListener("load", (event) => {
+    console.log(event);
+    let form = document.querySelector("form");
+
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault()
+        
+        console.log("form submitted")
+        
+
+    })
+})
