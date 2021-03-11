@@ -18,6 +18,7 @@ window.addEventListener("load", (event) => {
     const planetSelect = document.getElementById("planet-select")
 
 
+
     fetchPromise.then((response) => {
         const jsonPromise = response.json()
         console.log(response)
@@ -38,10 +39,27 @@ window.addEventListener("load", (event) => {
                     Star: ${json[index].star}
                     Diameter: ${json[index].diameter} <br />
                     </h3><br />
-                    <img height = "250px" src = ${json[index].image}>`;
+                    <img src = ${json[index].image}>`;
                     index = Math.floor((Math.random() * 6))
                 });
         });
     });
     // get the form and validate it down here
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (event) => {
+        let pilotName = document.querySelector("input[name=pilotName]");
+        let copilotName = document.querySelector("input[name=copilotName]");
+        let fuelLevel = document.querySelector("input[name=fuelLevel]")
+        let cargoMass = document.querySelector("input[name=cargoMass]")
+
+        if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
+            alert("All fields are required")
+            event.preventDefault()
+        } else {
+
+        }
+        
+
+    })
 })
