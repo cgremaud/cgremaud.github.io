@@ -29,8 +29,6 @@ window.addEventListener("load", (event) => {
 
             let index = Math.floor((Math.random() * 6))
             
-            //TO DO: make this modular by adding the code to fetchPlanet.js and importing
-            
             planetSelect.addEventListener("click", (event) => {
                 destinationElement.innerHTML = `<h3> 
                     Planet: ${json[index].name} <br />
@@ -53,6 +51,7 @@ window.addEventListener("load", (event) => {
         let fuelLevel = document.querySelector("input[name=fuelLevel]")
         let cargoMass = document.querySelector("input[name=cargoMass]")
         let faultyItems = document.getElementById("faultyItems")
+        let launchStatus = document.getElementById("launchStatus")
 
         if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
             alert("All fields are required")
@@ -66,6 +65,8 @@ window.addEventListener("load", (event) => {
             let pilotStatus = document.getElementById("pilotStatus")
             pilotStatus.innerHTML = "Pilot not ready."
             console.log("Conditional Triggered")
+            launchStatus.innerHTML= "LAUNCH ABORTED"
+            launchStatus.style.color = "red"
         }
 
         if (!isNaN(copilotName.value)){
@@ -75,6 +76,7 @@ window.addEventListener("load", (event) => {
             let copilotStatus = document.getElementById("copilotStatus")
             copilotStatus.innerHTML = "Copilot not ready."
             console.log("Conditional Triggered")
+            launchStatus.style.color = "red"
         }
 
         if (fuelLevel.value < 10000) {
@@ -82,6 +84,7 @@ window.addEventListener("load", (event) => {
             faultyItems.style.visibility = "visible"
             let fuelStatusElement = document.getElementById("fuelStatus")
             fuelStatusElement.innerHTML = "Fuel level too low"
+            launchStatus.style.color = "red"
         }
 
         if (cargoMass.value > 10000){
@@ -90,6 +93,7 @@ window.addEventListener("load", (event) => {
             cargoStatusElement.innerHTML = "Cargo mass too high";
             event.preventDefault()
             console.log("conditional triggered")
+            launchStatus.style.color = "red"
             
         }
 
