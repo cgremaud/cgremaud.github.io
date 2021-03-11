@@ -14,13 +14,14 @@
 
 window.addEventListener("load", (event) => {
     const fetchPromise = fetch("https://handlers.education.launchcode.org/static/planets.json")
-    const destinationElement = document.getElementById("destination")
+    const destinationElement = document.getElementById("missionTarget")
     const planetSelect = document.getElementById("planet-select")
 
 
     fetchPromise.then((response) => {
         const jsonPromise = response.json()
         console.log(response)
+        
 
         jsonPromise.then((json) => {
             console.log(json);

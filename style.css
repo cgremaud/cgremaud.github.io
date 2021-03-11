@@ -42,6 +42,11 @@ div {
     padding: 10px;
 }
 
+#planet-select {
+    margin: auto;
+    /* width: 50%; */
+}
+
 button {
     background-color: #419f6a;
     border: none;
