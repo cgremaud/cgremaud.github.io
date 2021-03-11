@@ -43,8 +43,9 @@ div {
 }
 
 #planet-select {
+    display: block;
     margin: auto;
-    /* width: 50%; */
+    width: 25%; 
 }
 
 button {
@@ -52,7 +53,7 @@ button {
     border: none;
     color: white;
     border-radius: 8px;
-    width: 25%;
+    width: 25%; 
     height: 30px;
-    margin: 10px 0;
+    margin:auto;
 }
