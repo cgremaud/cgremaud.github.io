@@ -58,12 +58,32 @@ window.addEventListener("load", (event) => {
             alert("All fields are required")
             event.preventDefault()
         } 
+
+        if (!isNaN(pilotName.value)){
+            event.preventDefault()
+            alert("Pilot name must be a valid string")
+            faultyItems.style.visibility = "visible"
+            let pilotStatus = document.getElementById("pilotStatus")
+            pilotStatus.innerHTML = "Pilot not ready."
+            console.log("Conditional Triggered")
+        }
+
+        if (!isNaN(copilotName.value)){
+            event.preventDefault()
+            alert("Copilot name must be a valid string")
+            faultyItems.style.visibility = "visible"
+            let copilotStatus = document.getElementById("copilotStatus")
+            copilotStatus.innerHTML = "Copilot not ready."
+            console.log("Conditional Triggered")
+        }
+
         if (fuelLevel.value < 10000) {
             event.preventDefault()
             faultyItems.style.visibility = "visible"
             let fuelStatusElement = document.getElementById("fuelStatus")
             fuelStatusElement.innerHTML = "Fuel level too low"
-        } 
+        }
+
         if (cargoMass.value > 10000){
             faultyItems.style.visibility = "visible"
             let cargoStatusElement = document.getElementById("cargoStatus");
