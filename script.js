@@ -62,7 +62,7 @@ window.addEventListener("load", (event) => {
             launchStatus.style.color = "red"
         }
 
-        if (fuelLevel.value < 10000 || isNaN(fuelLevel.value)) {
+        if (fuelLevel.value < 10000) {
             event.preventDefault()
             faultyItems.style.visibility = "visible"
             let fuelStatusElement = document.getElementById("fuelStatus")
@@ -70,7 +70,7 @@ window.addEventListener("load", (event) => {
             launchStatus.style.color = "red"
         }
 
-        if (cargoMass.value > 10000 || isNaN(cargoMass.value)){
+        if (cargoMass.value > 10000){
             faultyItems.style.visibility = "visible"
             let cargoStatusElement = document.getElementById("cargoStatus");
             cargoStatusElement.innerHTML = "Cargo mass too high/invalid value";
