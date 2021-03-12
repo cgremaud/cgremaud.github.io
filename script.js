@@ -1,7 +1,18 @@
 window.addEventListener("load", (event) => {
+    //is there a best-practices way to organize all of these declarations? 
+
     const fetchPromise = fetch("https://handlers.education.launchcode.org/static/planets.json")
+
     const destinationElement = document.getElementById("missionTarget")
     const planetSelect = document.getElementById("planet-select")
+
+    let pilotName = document.querySelector("input[name=pilotName]");
+    let copilotName = document.querySelector("input[name=copilotName]");
+    let fuelLevel = document.querySelector("input[name=fuelLevel]")
+    let cargoMass = document.querySelector("input[name=cargoMass]")
+    
+    let faultyItems = document.getElementById("faultyItems")
+    let launchStatus = document.getElementById("launchStatus")
 
     fetchPromise.then((response) => {
         const jsonPromise = response.json()
@@ -30,13 +41,7 @@ window.addEventListener("load", (event) => {
 
     form.addEventListener("submit", (event) => {
         
-        let pilotName = document.querySelector("input[name=pilotName]");
-        let copilotName = document.querySelector("input[name=copilotName]");
-        let fuelLevel = document.querySelector("input[name=fuelLevel]")
-        let cargoMass = document.querySelector("input[name=cargoMass]")
-        
-        let faultyItems = document.getElementById("faultyItems")
-        let launchStatus = document.getElementById("launchStatus")
+
         
         launchStatus.innerHTML= "Go for launch!"
         launchStatus.style.color = "green"
