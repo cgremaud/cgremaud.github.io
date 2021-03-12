@@ -81,8 +81,8 @@ window.addEventListener("load", (event) => {
         } else {
             event.preventDefault()
             faultyItems.style.visibility ="visible"
-            launchStatus.innerHTML= "Go for launch!"
-            launchStatus.style.color = "green"
+            // launchStatus.innerHTML= "Go for launch!"
+            // launchStatus.style.color = "green"
         }
     });
 });
