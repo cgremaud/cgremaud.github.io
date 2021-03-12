@@ -3,13 +3,10 @@ window.addEventListener("load", (event) => {
     const destinationElement = document.getElementById("missionTarget")
     const planetSelect = document.getElementById("planet-select")
 
-
-
     fetchPromise.then((response) => {
         const jsonPromise = response.json()
         console.log(response)
         
-
         jsonPromise.then((json) => {
             console.log(json);
 
@@ -20,7 +17,7 @@ window.addEventListener("load", (event) => {
                     Planet: ${json[index].name} <br />
                     Distance: ${json[index].distance}<br />
                     Moons: ${json[index].moons} <br />
-                    Star: ${json[index].star}
+                    Star: ${json[index].star}<br />
                     Diameter: ${json[index].diameter} <br />
                     </h3><br />
                     <img src = ${json[index].image}>`;
@@ -84,8 +81,8 @@ window.addEventListener("load", (event) => {
         } else {
             event.preventDefault()
             faultyItems.style.visibility ="visible"
+            launchStatus.innerHTML= "Go for launch!"
+            launchStatus.style.color = "green"
         }
-
-    })
-
-}) 
+    });
+});
