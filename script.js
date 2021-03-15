@@ -19,6 +19,8 @@ window.addEventListener("load", (event) => {
     const faultyItems = document.getElementById("faultyItems")
     const launchStatus = document.getElementById("launchStatus")
 
+    
+
     fetchPromise.then((response) => {
         const jsonPromise = response.json()
         console.log(response)
@@ -46,7 +48,7 @@ window.addEventListener("load", (event) => {
 
     form.addEventListener("submit", (event) => {
         
-
+        let goForLaunch = true
         
         launchStatus.innerHTML= "Go for launch!"
         launchStatus.style.color = "green"
@@ -60,9 +62,9 @@ window.addEventListener("load", (event) => {
             event.preventDefault()
             // alert("Pilot name must be a valid string")
             faultyItems.style.visibility = "visible"
-            
+            goForLaunch = false
             pilotStatus.innerHTML = "Pilot not ready."
-            console.log("Conditional Triggered")
+            console.log("pilot not ready")
             launchStatus.innerHTML= "LAUNCH ABORTED"
             launchStatus.style.color = "red"
         }
@@ -71,7 +73,7 @@ window.addEventListener("load", (event) => {
             event.preventDefault()
             // alert("Copilot name must be a valid string")
             faultyItems.style.visibility = "visible"
-            
+            goForLaunch = "false"
             copilotStatus.innerHTML = "Copilot not ready."
             console.log("Conditional Triggered")
             launchStatus.innerHTML= "LAUNCH ABORTED"
@@ -81,7 +83,7 @@ window.addEventListener("load", (event) => {
         if (fuelLevel.value < 10000) {
             event.preventDefault()
             faultyItems.style.visibility = "visible"
-            
+            goForLaunch = false
             fuelStatusElement.innerHTML = "Fuel level too low."
             launchStatus.innerHTML= "LAUNCH ABORTED"
             launchStatus.style.color = "red"
@@ -89,19 +91,21 @@ window.addEventListener("load", (event) => {
 
         if (cargoMass.value > 10000){
             faultyItems.style.visibility = "visible"
-            
+            goForLaunch = false
             cargoStatusElement.innerHTML = "Cargo mass too high.";
             event.preventDefault()
             console.log("conditional triggered")
             launchStatus.innerHTML= "LAUNCH ABORTED"
             launchStatus.style.color = "red"
             
-        } else {
+        } else if (goForLaunch === true ){
             event.preventDefault()
             pilotStatus.innerHTML = "Pilot ready."
-            copilotStatus.innerHTML = "Copilot not ready."
+            copilotStatus.innerHTML = "Copilot ready."
             fuelStatusElement.innerHTML = "Fuel level high enough for launch."
             cargoStatusElement.innerHTML = "Cargo mass low enough for launch.";
+
+            goForLaunch = true
 
             
             faultyItems.style.visibility ="visible"
