@@ -111,10 +111,9 @@ window.addEventListener("load", (event) => {
             cargoStatusElement.innerHTML = "Cargo mass low enough for launch.";
 
             goForLaunch = true
-
             
             faultyItems.style.visibility ="visible"
           
         }
     });
-});
+});  
