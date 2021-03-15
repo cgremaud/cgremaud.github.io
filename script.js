@@ -47,6 +47,11 @@ window.addEventListener("load", (event) => {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", (event) => {
+
+        pilotStatus.innerHTML = "Pilot ready."
+        copilotStatus.innerHTML = "Copilot ready."
+        fuelStatusElement.innerHTML = "Fuel level high enough for launch."
+        cargoStatusElement.innerHTML = "Cargo mass low enough for launch.";
         
         let goForLaunch = true
         
