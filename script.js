@@ -100,12 +100,11 @@ window.addEventListener("load", (event) => {
             event.preventDefault()
             pilotStatus.innerHTML = "Pilot ready."
             copilotStatus.innerHTML = "Copilot not ready."
-            fuelStatusElement.innerHTML = "Fuel level nominal."
-            cargoStatusElement.innerHTML = "Cargo mass nominal.";
+            fuelStatusElement.innerHTML = "Fuel level high enough for launch."
+            cargoStatusElement.innerHTML = "Cargo mass low enough for launch.";
 
             
             faultyItems.style.visibility ="visible"
-
           
         }
     });
