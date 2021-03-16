@@ -61,6 +61,9 @@ window.addEventListener("load", (event) => {
         if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
             alert("All fields are required")
             event.preventDefault()
+            goForLaunch = false
+            launchStatus.innerHTML= "Go for launch!"
+            launchStatus.style.color = "green"
         } 
 
         if (!isNaN(pilotName.value)){
@@ -105,6 +108,8 @@ window.addEventListener("load", (event) => {
             
         } else if (goForLaunch === true ){
             event.preventDefault()
+            launchStatus.innerHTML= "Go for launch!"
+            launchStatus.style.color = "green"
             pilotStatus.innerHTML = "Pilot ready."
             copilotStatus.innerHTML = "Copilot ready."
             fuelStatusElement.innerHTML = "Fuel level high enough for launch."
