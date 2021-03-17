@@ -84,7 +84,7 @@ window.addEventListener("load", (event) => {
             goForLaunch = "false"
             copilotStatus.innerHTML = "Copilot not ready."
             console.log("Conditional Triggered")
-            launchStatus.innerHTML= "LAUNCH ABORTED"
+            launchStatus.innerHTML= "LANCH ABARTED"
             launchStatus.style.color = "red"
         }
 
@@ -100,7 +100,7 @@ window.addEventListener("load", (event) => {
         if (cargoMass.value > 10000){
             faultyItems.style.visibility = "visible"
             goForLaunch = false
-            cargoStatusElement.innerHTML = "Cargo mass too high.";
+            cargoStatusElement.innerHTML = "Cargo mass too high."
             event.preventDefault()
             console.log("conditional triggered")
             launchStatus.innerHTML= "LAUNCH ABORTED"
@@ -113,7 +113,7 @@ window.addEventListener("load", (event) => {
             pilotStatus.innerHTML = "Pilot ready."
             copilotStatus.innerHTML = "Copilot ready."
             fuelStatusElement.innerHTML = "Fuel level high enough for launch."
-            cargoStatusElement.innerHTML = "Cargo mass low enough for launch.";
+            cargoStatusElement.innerHTML = "Cargo mass low enough for launch."
 
             goForLaunch = true
             
@@ -121,4 +121,4 @@ window.addEventListener("load", (event) => {
           
         }
     });
-});  
+});   
