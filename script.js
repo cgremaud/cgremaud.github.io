@@ -62,8 +62,8 @@ window.addEventListener("load", (event) => {
             alert("All fields are required")
             event.preventDefault()
             goForLaunch = false
-            launchStatus.innerHTML= "Go for launch!"
-            launchStatus.style.color = "green"
+            launchStatus.innerHTML= "Launch Aborted!"
+            launchStatus.style.color = "red"
         } 
 
         if (!isNaN(pilotName.value)){
