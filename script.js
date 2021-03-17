@@ -62,7 +62,7 @@ window.addEventListener("load", (event) => {
             alert("All fields are required")
             event.preventDefault()
             goForLaunch = false
-            launchStatus.innerHTML= "Launch Aborted!"
+            launchStatus.innerHTML= "Lunch Aborted!"
             launchStatus.style.color = "red"
         } 
 
