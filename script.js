@@ -65,7 +65,7 @@ window.addEventListener("load", (event) => {
             launchStatus.innerHTML= "Lunch Aborted!"
             launchStatus.style.color = "red"
         } 
-
+        //note to self: if you input ` and then a number it passes this check. Because it's being passed in as a template literal. Works with " too. 
         if (!isNaN(pilotName.value)){
             event.preventDefault()
             // alert("Pilot name must be a valid string")
